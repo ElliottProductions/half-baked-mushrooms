@@ -48,7 +48,7 @@ addFriendButton.addEventListener('click', () => {
     // create a new friend object   
     const newFriend = {
         name: data,
-        satisfaction: Math.floor(Math.random()) * 2 + 1,
+        satisfaction: Math.floor(Math.random() * 3 + 1),
     };
     // push it into the friends state array, passed in as an argument
     friendData.push(newFriend);
@@ -66,7 +66,7 @@ friendForm.addEventListener('submit', (event) => {
     //console.log(data.get('friend-input'));
     const newFriend = {
         name: data.get('friend-field'),
-        satisfaction: Math.floor(Math.random()) * 2 + 1,
+        satisfaction: Math.floor(Math.random() * 3 + 1),
     };
     // push it into the friends state array, passed in as an argument
     friendData.push(newFriend);
