@@ -35,6 +35,10 @@ export function renderFriend(friend) {
         emojiEl.textContent = '😀';
     }
 
+    if (friend.satisfaction === 4) {
+        emojiEl.textContent = '😍';
+    }
+
     div.append(nameEl, emojiEl);
     return div;
 }

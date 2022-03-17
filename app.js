@@ -37,7 +37,8 @@ addMushroomButton.addEventListener('click', () => {
 
         mushroomCount++;
         displayMushrooms();
-    } else if (Math.random() > .75) {
+    } else if (Math.random() > .5) {
+        alert('found a strawberry!');
         berryCount++;
         displayMushrooms();
     } else {
@@ -53,7 +54,7 @@ addFriendButton.addEventListener('click', () => {
     // create a new friend object   
     const newFriend = {
         name: data || `Friend# ${Math.floor(Math.random() * 1000)}`,
-        satisfaction: Math.floor(Math.random() * 3 + 1),
+        satisfaction: Math.floor(Math.random() * 2 + 1),
     };
     // push it into the friends state array, passed in as an argument
     friendData.push(newFriend);
@@ -73,7 +74,7 @@ friendForm.addEventListener('submit', (event) => {
     let nameValue = data.get('friend-field');
     const newFriend = {
         name: nameValue || `Friend# ${Math.floor(Math.random() * 1000)}`,
-        satisfaction: Math.floor(Math.random() * 3 + 1),
+        satisfaction: Math.floor(Math.random() * 2 + 1),
     };
     // push it into the friends state array, passed in as an argument
     friendData.push(newFriend);
@@ -105,7 +106,7 @@ function displayFriends() {
                 friend.satisfaction++;
                 
                 
-            } else if (berryCount > 0 && friend.satisfaction < 3) {
+            } else if (berryCount > 0 && friend.satisfaction < 4) {
                 berryCount--;
                 friend.satisfaction++;
 
