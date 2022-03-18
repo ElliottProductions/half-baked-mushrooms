@@ -102,7 +102,7 @@ function displayFriends() {
         //             then display your friends and mushrooms with the updated state
         newFriendEl.addEventListener('click', () => {
             if (mushroomCount === 0){
-                alert('You\'re out of mushrooms!')
+                alert('You\'re out of mushrooms!');
             }
             if (mushroomCount > 0 && friend.satisfaction < 3) {
                 mushroomCount--;
