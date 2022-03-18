@@ -44,7 +44,6 @@ addMushroomButton.addEventListener('click', () => {
     } else {
         alert('no luck!');
     }
-    console.log(berryCount);
 });
 
 addFriendButton.addEventListener('click', () => {
@@ -61,6 +60,7 @@ addFriendButton.addEventListener('click', () => {
     // reset the input
     // display all the friends (use a function here)
     displayFriends();
+    friendForm.reset();
 });
 
 friendForm.addEventListener('submit', (event) => {
@@ -101,6 +101,9 @@ function displayFriends() {
         //             increment the friends satisfaction and decrement your mushrooms
         //             then display your friends and mushrooms with the updated state
         newFriendEl.addEventListener('click', () => {
+            if (mushroomCount === 0){
+                alert('You\'re out of mushrooms!')
+            }
             if (mushroomCount > 0 && friend.satisfaction < 3) {
                 mushroomCount--;
                 friend.satisfaction++;
@@ -111,6 +114,7 @@ function displayFriends() {
                 friend.satisfaction++;
 
             }
+            
             displayFriends();
             displayMushrooms();
 
